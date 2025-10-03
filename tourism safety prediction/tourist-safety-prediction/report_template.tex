@@ -1,0 +1,88 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+
+\begin{document}
+
+\title{Tourism Safety Prediction: A Machine Learning Web Application}
+\author{Your Name}
+\date{October 2025}
+\maketitle
+
+\begin{abstract}
+This project develops a web application to predict safety scores for tourism destinations using machine learning. Built with Flask, scikit-learn, and Pandas, it uses a Random Forest Regressor trained on a tourism dataset to provide safety predictions via a user-friendly interface. The system includes data visualization and downloadable results, designed for local execution.
+\end{abstract}
+
+\section{Introduction}
+Tourism safety is critical for travelers. This project leverages machine learning to predict safety scores based on features like crime levels and political stability, using the dataset "combined_tourism_dataset_labeled.csv". The objectives are:
+\begin{itemize}
+    \item Develop a Random Forest model for safety score prediction.
+    \item Create a Flask-based web interface for user inputs and results.
+    \item Provide visualizations for dataset insights.
+\end{itemize}
+
+\section{System Analysis}
+\subsection{Problem Statement}
+Travelers need reliable safety predictions for destinations. Manual assessment is inefficient; this project automates it using ML.
+
+\subsection{Proposed System}
+A Flask web app with:
+\begin{itemize}
+    \item Input form for features (e.g., Place Type, Crime Level).
+    \item Random Forest Regressor for predicting safety scores.
+    \item Plotly-based dashboard for insights.
+\end{itemize}
+
+\section{System Design}
+\subsection{Architecture}
+\begin{itemize}
+    \item Frontend: HTML, CSS, Bootstrap, Plotly.
+    \item Backend: Flask, scikit-learn, Pandas.
+    \item Data: CSV-based, no database.
+\end{itemize}
+
+\subsection{Data Flow Diagram}
+% Add DFD using a tool like LaTeX TikZ or insert as image
+% \includegraphics{dfd.png}
+
+\section{Implementation}
+\subsection{Technologies Used}
+\begin{itemize}
+    \item Python 3.8+, Flask, scikit-learn, Pandas, Plotly.
+    \item Random Forest Regressor for prediction.
+\end{itemize}
+
+\subsection{Algorithm}
+Random Forest Regressor:
+\begin{enumerate}
+    \item Preprocess categorical features using OrdinalEncoder.
+    \item Train on tourism dataset to predict `score`.
+    \item Save model and preprocessor for web app use.
+\end{enumerate}
+
+\section{Results}
+The app allows users to input features and get safety scores. Example:
+\begin{itemize}
+    \item Input: Place Type = Beach, Crime Level = Low
+    \item Output: Predicted Safety Score = 3.2
+\end{itemize}
+The dashboard shows average scores by Place Type.
+
+\section{Conclusion}
+The project successfully delivers a functional ML-based web app for tourism safety prediction, suitable for MCA final-year submission.
+
+\section{Future Scope}
+\begin{itemize}
+    \item Integrate a database (e.g., SQLite) for storing predictions.
+    \item Add more visualizations and advanced ML models.
+    \item Deploy on cloud platforms like Heroku.
+\end{itemize}
+
+\end{document}

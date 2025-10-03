@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Predict Safety Score</h2>
+<form method="POST" action="{{ url_for('predict') }}">
+    <div class="form-group">
+        <label for="place_type">Place Type</label>
+        <select name="place_type" required>
+            <option value="">Select</option>
+            <option value="Cultural Site">Cultural Site</option>
+            <option value="Lake">Lake</option>
+            <option value="Historic Site">Historic Site</option>
+            <option value="Wildlife Sanctuary">Wildlife Sanctuary</option>
+            <option value="Mountain">Mountain</option>
+            <option value="Desert">Desert</option>
+            <option value="Island">Island</option>
+            <option value="Beach">Beach</option>
+            <option value="Urban Park">Urban Park</option>
+            <option value="Archaeological Site">Archaeological Site</option>
+            <option value="Nature Reserve">Nature Reserve</option>
+            <option value="Amusement Park">Amusement Park</option>
+            <option value="Resort Area">Resort Area</option>
+            <option value="Wetland">Wetland</option>
+            <option value="Religious Site">Religious Site</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="tourist_type">Tourist Type</label>
+        <select name="tourist_type" required>
+            <option value="">Select</option>
+            <option value="Religious Tourist">Religious Tourist</option>
+            <option value="Couple">Couple</option>
+            <option value="Ecotourist">Ecotourist</option>
+            <option value="Wellness Tourist">Wellness Tourist</option>
+            <option value="Adventure Tourist">Adventure Tourist</option>
+            <option value="Luxury Traveler">Luxury Traveler</option>
+            <option value="Digital Nomad">Digital Nomad</option>
+            <option value="Single">Single</option>
+            <option value="Family">Family</option>
+            <option value="Business Traveler">Business Traveler</option>
+            <option value="Solo Female">Solo Female</option>
+            <option value="Group">Group</option>
+        </select>
+    </div>
+    <!-- Add similar dropdowns for other features -->
+    <div class="form-group">
+        <label for="crime_level">Crime Level</label>
+        <select name="crime_level" required>
+            <option value="">Select</option>
+            <option value="Very Low">Very Low</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+            <option value="Very High">Very High</option>
+        </select>
+    </div>
+    <!-- Repeat for other features: Healthcare_Quality, Political_Stability, etc. -->
+    <button type="submit">Predict</button>
+</form>
+{% endblock %}

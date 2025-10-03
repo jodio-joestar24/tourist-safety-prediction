@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Dataset Insights</h2>
+<div id="plot"></div>
+<script>
+    var graph = {{ graph_json | safe }};
+    Plotly.newPlot('plot', graph.data, graph.layout);
+</script>
+{% endblock %}
